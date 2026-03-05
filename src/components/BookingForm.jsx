@@ -73,7 +73,7 @@ export function BookingForm({ source }) {
             <p className="success-text">سنتواصل معك قريباً.</p>
             <div className="success-details">
               <p><strong>الاسم:</strong> {successData.name}</p>
-              <p><strong>الهاتف:</strong> {formatPhoneForDisplay(successData.phone)}</p>
+              <p><strong>الهاتف:</strong> <span dir="ltr">{formatPhoneForDisplay(successData.phone)}</span></p>
             </div>
             <button type="button" className="success-close" onClick={() => setSuccessData(null)}>
               حسناً
