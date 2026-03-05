@@ -25,7 +25,7 @@ export function LandingPage({ source = 'business' }) {
       />
       <main className="content-wrap">
         <div className="content-pitch">
-          <div className="section-label">ماذا تكتسب</div>
+          <div className="section-label">ماذا تتعلم</div>
           <ValueList items={content.points} />
           <PriceSection />
         </div>
