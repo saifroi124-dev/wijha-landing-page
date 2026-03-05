@@ -56,6 +56,13 @@ export function BookingForm({ source }) {
     setSuccessData({ name, phone: tel });
   }
 
+  function formatPhoneForDisplay(tel) {
+    if (!tel) return '';
+    const digits = tel.replace(/\D/g, '').replace(/^216/, '');
+    if (digits.length === 0) return tel;
+    return digits.replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1 ');
+  }
+
   return (
     <div className="content-form">
       {successData && (
@@ -66,7 +73,7 @@ export function BookingForm({ source }) {
             <p className="success-text">سنتواصل معك قريباً.</p>
             <div className="success-details">
               <p><strong>الاسم:</strong> {successData.name}</p>
-              <p><strong>الهاتف:</strong> {successData.phone}</p>
+              <p><strong>الهاتف:</strong> {formatPhoneForDisplay(successData.phone)}</p>
             </div>
             <button type="button" className="success-close" onClick={() => setSuccessData(null)}>
               حسناً
